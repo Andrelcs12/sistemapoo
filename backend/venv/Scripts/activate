@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\apglu\Desktop\projetos 2025\Zenith-main\sistemapoo\backend\venv"
+VIRTUAL_ENV="C:\Users\apglu\Desktop\unit\sistemapoo\backend\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
