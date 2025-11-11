@@ -14,10 +14,6 @@ export default function ReservasPage() {
     { id: 6, name: "Fábio Almeida", activity: "Crossfit", date: "2025-11-05", time: "06:00", status: "Reservado" },
     { id: 7, name: "Gabriela Torres", activity: "Spinning", date: "2025-11-05", time: "20:00", status: "Confirmado" },
     { id: 8, name: "Heitor Nunes", activity: "Natação", date: "2025-11-06", time: "13:00", status: "Reservado" },
-    { id: 9, name: "Isabela Pereira", activity: "Musculação", date: "2025-11-07", time: "17:30", status: "Concluído" },
-    { id: 10, name: "João Oliveira", activity: "Funcional", date: "2025-11-07", time: "08:00", status: "Reservado" },
-    { id: 11, name: "Karla Matos", activity: "Pilates", date: "2025-11-08", time: "10:30", status: "Confirmado" },
-    { id: 12, name: "Lucas Barbosa", activity: "Crossfit", date: "2025-11-09", time: "18:00", status: "Cancelado" },
   ]);
 
   const [isModalOpen, setIsModalOpen] = useState (false);
@@ -63,7 +59,7 @@ export default function ReservasPage() {
     <>
     {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     <div className="relative min-h-screen text-gray-200 py-4 px-16">
-      <div className="w-full bg-zinc-950/80 backdrop-blur-md p-8 rounded-2xl shadow-lg shadow-amber-900/10">
+      <div className="w-full bg-zinc-950/80 p-8 rounded-2xl shadow-lg shadow-amber-900/10">
         
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-extrabold text-amber-500">Reservas Feitas</h1>

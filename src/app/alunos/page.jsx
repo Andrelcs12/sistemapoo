@@ -14,8 +14,6 @@ export default function AlunosPage() {
     { id: 6, name: "Fábio Almeida", cpf: "364.907.285-40", idade: 38, plano: "Trimestral", status: "Em dia" },
     { id: 7, name: "Gabriela Torres", cpf: "740.256.893-02", idade: 25, plano: "Mensal", status: "Atrasado" },
     { id: 8, name: "Heitor Nunes", cpf: "502.634.718-66", idade: 32, plano: "Premium", status: "Em dia" },
-    { id: 9, name: "Isabela Pereira", cpf: "186.479.520-14", idade: 30, plano: "Mensal", status: "Atrasado" },
-    { id: 10, name: "João Oliveira", cpf: "927.351.806-57", idade: 44, plano: "Trimestral", status: "Em dia" },
   ]);
 
   const [isModalOpen, setIsModalOpen] = useState (false);
@@ -48,7 +46,7 @@ export default function AlunosPage() {
       <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />
     )}
     <div className="relative min-h-screen text-gray-200 py-4 px-16">
-      <div className="w-full bg-zinc-950/80 backdrop-blur-md p-8 rounded-2xl shadow-lg shadow-amber-900/10">
+      <div className="w-full bg-zinc-950/80 p-8 rounded-2xl shadow-lg shadow-amber-900/10">
         
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-extrabold text-amber-500">Alunos Cadastrados</h1>
