@@ -1,0 +1,55 @@
+<div className="p-6 max-w-lg mx-auto mt-120">
+        <h1 className="text-2xl font-bold mb-4">Usuários</h1>
+
+        <div className="flex gap-2 mb-4">
+          <input
+            className="border p-2 flex-1"
+            placeholder="Nome"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+          <input
+            className="border p-2 flex-1"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button
+            onClick={salvar}
+            className="bg-blue-500 text-white px-4 rounded"
+          >
+            {editando ? "Atualizar" : "Adicionar"}
+          </button>
+        </div>
+
+        <ul>
+          {users.map((u) => (
+            <li
+              key={u.id}
+              className="border-b py-2 flex justify-between items-center"
+            >
+              <div>
+                <strong>{u.nome}</strong> — {u.email}
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setNome(u.nome);
+                    setEmail(u.email);
+                    setEditando(u.id);
+                  }}
+                  className="text-yellow-500"
+                >
+                  ✏️
+                </button>
+                <button
+                  onClick={() => deletar(u.id)}
+                  className="text-red-500"
+                >
+                  🗑️
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
