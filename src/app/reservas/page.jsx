@@ -37,11 +37,11 @@ export default function ReservasPage() {
 
   const salvarReserva = (dados) => {
     if (reservaEditando) {
-      // edição
+
       setReservas((prev) => prev.map((r) => (r.id === reservaEditando.id ? { ...r, ...dados } : r)));
       setToast({ message: "Reserva editada com sucesso!", type: "success" });
     } else {
-      // adição - id único rápido
+   
       const novo = { id: Date.now(), ...dados };
       setReservas((prev) => [...prev, novo]);
       setToast({ message: `${dados.name} foi adicionado com sucesso!`, type: "success" });

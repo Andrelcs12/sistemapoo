@@ -47,11 +47,11 @@ export default function UsersPage() {
   
 
   return (
-    <div className="min-h-screen mt-8">
+    <div className="min-h-screen sm:px-6 lg:px-12 mt-4">
       <div className="px-12">
-        <h1 className="text-amber-600 font-extrabold text-2xl">Painel Geral</h1>
+        <h1 className="text-amber-600 font-extrabold text-2xl sm:text-3xl text-center sm:text-left">Painel Geral</h1>
         {/* grid cards */}
-        <div className="grid grid-cols-4 gap-8 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-6">
           <div className="flex flex-col bg-neutral-900 p-6 border-l-4 border-cyan-600 rounded-xl shadow-md">
             <h1 className="flex justify-between text-lg font-semibold text-gray-100 items-center">Alunos Ativos<FontAwesomeIcon icon={faUser} className="text-cyan-600"/></h1>
             <span className="font-extrabold text-2xl mt-2 text-white">60</span>
@@ -75,10 +75,10 @@ export default function UsersPage() {
         </div>
         
         {/* frequencia */}
-        <div className="flex gap-8">
-          <div className="flex flex-col w-[49%] bg-neutral-900 p-6 rounded-xl mt-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-8">
+          <div className="flex flex-col w-full lg:w-1/2 bg-neutral-900 p-6 rounded-xl">
             <h1 className="text-amber-600 font-bold text-lg">Frequência Semanal</h1>
-            <div className="w-full h-64 flex items-end justify-between gap-3 mt-2">
+            <div className="w-full h-56 sm:h-64 flex items-end justify-between gap-2 sm:gap-3 mt-2">
               <span className="flex-1 rounded-t-lg bg-zinc-700 h-[70%] cursor-pointer hover:scale-[102%] duration-200"></span>
               <span className="flex-1 rounded-t-lg bg-zinc-500 h-[90%] cursor-pointer hover:scale-[102%] duration-200"></span>
               <span className="flex-1 rounded-t-lg bg-zinc-300 h-[50%] cursor-pointer hover:scale-[102%] duration-200"></span>
@@ -87,41 +87,41 @@ export default function UsersPage() {
               <span className="flex-1 rounded-t-lg bg-zinc-400 h-[95%] cursor-pointer hover:scale-[102%] duration-200"></span>
               <span className="flex-1 rounded-t-lg bg-zinc-300 h-[35%] cursor-pointer hover:scale-[102%] duration-200"></span>
             </div>
-            <div className="w-full justify-between flex gap-4 items-center text-gray-200 font-medium text-sm mt-1">
-              <span className="ml-5">Seg</span>
+            <div className="w-full flex justify-between text-gray-200 font-medium text-xs sm:text-sm mt-2 px-1">
+              <span className="">Seg</span>
               <span>Ter</span>
               <span>Qua</span>
               <span>Qui</span>
               <span>Sex</span>
               <span>Sáb</span>
-              <span className="mr-5">Dom</span>
+              <span className="">Dom</span>
             </div>
           </div>
 
           {/* prox aulas*/}
-          <div className="flex flex-col w-[49%] bg-neutral-900 p-6 rounded-xl mt-8">
+          <div className="flex flex-col w-full lg:w-1/2 bg-neutral-900 p-6 rounded-xl">
             <h1 className="text-amber-600 font-bold text-lg">Próximas Aulas</h1>
+
             <div className="flex flex-col">
-              <div className="flex items-center justify-between mt-8">
-                <p className="font-semibold">Natação - Inciante</p>
-                <span className="w-20 text-center bg-green-200 px-2 py-1 rounded-full text-xs font-medium text-green-800">Confirmado</span>
-              </div>
-              <p className="text-sm text-gray-300 border-b-2  border-gray-400 pb-2">Hoje - 16:00h</p>
-
-              <div className="flex items-center justify-between mt-8">
-                <p className="font-semibold">Yoga - Grupo 1</p>
-                <span className="w-20 text-center bg-yellow-200 px-2 py-1 rounded-full text-xs font-medium text-yellow-800">Pendente</span>
-              </div>
-              <p className="text-sm text-gray-300 border-b-2  border-gray-400 pb-2">Hoje - 19:00h</p>
-
-              <div className="flex items-center justify-between mt-8">
-                <p className="font-semibold">Luta - JiuJitsu</p>
-                <span className="w-20 text-center bg-blue-200 px-2 py-1 rounded-full text-xs font-medium text-blue-800">Agendada</span>
-              </div>
-              <p className="text-sm text-gray-300 border-b-2 border-gray-400 pb-2">Hoje - 20:30h</p>
+              {[
+                { nome: "Natação - Iniciante", hora: "Hoje - 16:00h", cor: "green", status: "Confirmado" },
+                { nome: "Yoga - Grupo 1", hora: "Hoje - 19:00h", cor: "yellow", status: "Pendente" },
+                { nome: "Luta - JiuJitsu", hora: "Hoje - 20:30h", cor: "blue", status: "Agendada" },
+              ].map((aula, i) => (
+                <div key={i} className="mt-6 border-b border-zinc-700 pb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <p className="font-semibold text-gray-100">{aula.nome}</p>
+                    <span
+                      className={`w-fit sm:w-24 text-center bg-${aula.cor}-200 text-${aula.cor}-800 px-3 py-1 rounded-full text-xs font-medium`}
+                    >
+                      {aula.status}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-300 mt-1">{aula.hora}</p>
+                </div>
+              ))}
             </div>
           </div>
-
         </div>
       </div>
     </div>
